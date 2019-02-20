@@ -12,7 +12,6 @@ import 'filepond/dist/filepond.min.css'
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
-import './styles.css'
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
@@ -22,9 +21,9 @@ function App() {
   return (
     <div className="App">
       <FilePond
-        allowMultiple={false}
+        allowMultiple={true}
         onupdatefiles={setFiles}
-        labelIdle='2MB 이하의 png, gif, jpg(jpeg), pdf, tif(tiff) <span class="filepond--label-action">파일 찾기</span>'
+        labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
       >
         {files.map(fileItem => {
           return <File key={fileItem.file} src={fileItem.file} origin="local" />
