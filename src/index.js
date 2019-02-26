@@ -21,14 +21,11 @@ function App() {
   return (
     <div className="App">
       <FilePond
+        files={files}
         allowMultiple={true}
         onupdatefiles={setFiles}
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-      >
-        {files.map(fileItem => {
-          return <File key={fileItem.file} src={fileItem.file} origin="local" />
-        })}
-      </FilePond>
+      />
     </div>
   )
 }
